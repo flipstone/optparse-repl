@@ -1,6 +1,7 @@
 module Options.Applicative.Repl
   ( ReplConfig
       ( ReplConfig
+      , prompt
       , runCommand
       , echo
       , welcomeMessage
@@ -12,7 +13,6 @@ module Options.Applicative.Repl
     , historyMaxEntries
     )
   , repl
-  , commandParser
   ) where
 
 import qualified Control.Exception.Safe as SafeEx
@@ -33,14 +33,6 @@ data HistoryConfig = HistoryConfig
   { historyFile :: FilePath
   , historyMaxEntries :: Int
   }
-
-commandParser ::
-  (MIO.MonadIO m, SafeEx.MonadCatch m) =>
-  ReplConfig command m ->
-  Opt.ParserInfo command ->
-  Opt.Parser (m ())
-commandParser config replInfo =
-  pure (repl config replInfo)
 
 repl ::
   (MIO.MonadIO m, SafeEx.MonadCatch m) =>
