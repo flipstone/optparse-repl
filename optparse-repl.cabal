@@ -1,0 +1,47 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           optparse-repl
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/optparse-repl#readme>
+homepage:       https://github.com/flipstone/optparse-repl#readme
+bug-reports:    https://github.com/flipstone/optparse-repl/issues
+author:         Flipstone Technology Partners
+maintainer:     development@flipstone.com
+copyright:      2023 Author name here
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/flipstone/optparse-repl
+
+flag strict
+  description: More strict ghc options used for development and ci, not intended for end-use.
+  manual: True
+  default: False
+
+library
+  exposed-modules:
+      Options.Applicative.Repl
+  other-modules:
+      Paths_optparse_repl
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , isocline ==1.0.*
+    , optparse-applicative ==0.17.*
+    , safe-exceptions ==0.1.*
+  default-language: Haskell2010
+  if flag(strict)
+    ghc-options: -Weverything -Werror -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-missing-kind-signatures -Wno-prepositive-qualified-module -Wno-implicit-prelude -Wno-safe -Wno-unsafe -Wno-missing-safe-haskell-mode -Wno-missing-deriving-strategies -Wno-all-missed-specialisations -Wno-missed-specialisations
+  else
+    ghc-options: -Wall
