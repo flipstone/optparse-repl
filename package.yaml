@@ -4,11 +4,10 @@ github:              "flipstone/optparse-repl"
 license:             MIT
 author:              "Flipstone Technology Partners"
 maintainer:          "development@flipstone.com"
-copyright:           "2023 Author name here"
+copyright:           "2023"
 
 extra-source-files:
 - README.md
-- CHANGELOG.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package

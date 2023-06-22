@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.35.1.
+-- This file has been generated from package.yaml by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
 
@@ -11,13 +11,12 @@ homepage:       https://github.com/flipstone/optparse-repl#readme
 bug-reports:    https://github.com/flipstone/optparse-repl/issues
 author:         Flipstone Technology Partners
 maintainer:     development@flipstone.com
-copyright:      2023 Author name here
+copyright:      2023
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    CHANGELOG.md
 
 source-repository head
   type: git
