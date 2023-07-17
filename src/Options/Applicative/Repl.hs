@@ -75,7 +75,7 @@ replCompletion parserInfo completionEnv line = do
   pure ()
 
 runParsedCommand ::
-  SafeEx.MonadCatch m =>
+  (SafeEx.MonadCatch m) =>
   ReplConfig command m ->
   Opt.ParserResult command ->
   m ()
@@ -172,7 +172,7 @@ replParserPrefs =
       <> Opt.showHelpOnError
 
 readlineWithCompletion ::
-  MIO.MonadIO m =>
+  (MIO.MonadIO m) =>
   String ->
   (Isocline.CompletionEnv -> String -> IO ()) ->
   m (Maybe String)
