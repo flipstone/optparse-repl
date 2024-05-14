@@ -1,5 +1,5 @@
 name:                optparse-repl
-version:             0.1.0.0
+version:             0.1.0.1
 github:              "flipstone/optparse-repl"
 license:             MIT
 author:              "Flipstone Technology Partners"
@@ -21,7 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/gith
 dependencies:
 - base >= 4.7 && < 5
 - isocline >= 1.0 &&  < 1.1
-- optparse-applicative >= 0.17 && < 0.18
+- optparse-applicative >= 0.17 && < 0.19
 - safe-exceptions >= 0.1 && < 0.2
 
 flags:
