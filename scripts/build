@@ -5,4 +5,4 @@ set -e
 source scripts/lib/run-in-container.sh
 
 ./scripts/format-repo
-./scripts/test
+./scripts/test-all

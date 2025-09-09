@@ -1,0 +1,6 @@
+packages:
+  - .
+
+flags:
+  optparse-repl:
+    strict: true

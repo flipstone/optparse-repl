@@ -1,5 +1,5 @@
 name:                optparse-repl
-version:             0.1.0.2
+version:             0.1.0.3
 github:              "flipstone/optparse-repl"
 license:             MIT
 author:              "Flipstone Technology Partners"
@@ -18,10 +18,13 @@ extra-source-files:
 # common to point users to the README.md file.
 description:         Please see the README on GitHub at <https://github.com/githubuser/optparse-repl#readme>
 
+tested-with:
+    GHC == 8.10.7, GHC == 9.0.2, GHC == 9.2.8, GHC == 9.4.8, GHC == 9.6.7, GHC == 9.8.4, GHC == 9.10.2
+
 dependencies:
 - base >= 4.7 && < 5
 - isocline >= 1.0 &&  < 1.1
-- optparse-applicative >= 0.17 && < 0.19
+- optparse-applicative >= 0.16 && < 0.19
 - safe-exceptions >= 0.1 && < 0.2
 
 flags:
@@ -38,7 +41,6 @@ when:
         - -Werror
         - -Wno-missing-local-signatures
         - -Wno-monomorphism-restriction
-        - -Wno-missing-kind-signatures
         - -Wno-prepositive-qualified-module
         - -Wno-implicit-prelude
         - -Wno-safe
@@ -47,6 +49,17 @@ when:
         - -Wno-missing-deriving-strategies
         - -Wno-all-missed-specialisations
         - -Wno-missed-specialisations
+      when:
+        - condition: impl (ghc >= 9.2)
+          ghc-options:
+            - -Wno-missing-kind-signatures
+        - condition: impl (ghc >= 9.8)
+          ghc-options:
+            - -Wno-missing-role-annotations
+            - -Wno-missing-poly-kind-signatures
+        - condition: impl (ghc >= 9.10)
+          ghc-options:
+            - -Wno-defaulted-exception-context
     else:
       ghc-options:
         - -Wall
